@@ -4,8 +4,7 @@ use std::io::BufReader;
 use std::io::Read;
 use std::io::SeekFrom;
 
-use winit::platform::unix::x11::ffi::SubstructureNotifyMask;
-
+ 
 use super::data_types::*;
 
 pub struct WadReader {
