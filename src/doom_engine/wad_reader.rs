@@ -122,7 +122,7 @@ impl WadReader {
     }
 
     pub fn read_node(&mut self, lump_index: usize) -> Vec<Node> {
-        let count = self.directory[lump_index].lump_size / 14;
+        let count = self.directory[lump_index].lump_size / 28;
         let offset = self.directory[lump_index].lump_offset as u64;
         let mut b: [u8; 28] = [0; 28];
 
@@ -150,7 +150,7 @@ impl WadReader {
 
             let front_child_id = get_u16(&b[24..26]);
             let back_child_id = get_u16(&b[26..28]);
-
+            //println!("{} {} {} {}",bbox_front.top, bbox_front.bottom, bbox_front.left,bbox_front.right);
             v.push(Node {
                 x_partition,
                 y_partition,

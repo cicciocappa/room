@@ -66,6 +66,7 @@ class WADReader:
 
         node.front_child_id = read_2_bytes(offset + 24, byte_format='H')
         node.back_child_id = read_2_bytes(offset + 26, byte_format='H')
+        print(node.bbox['front'].top,node.bbox['front'].bottom,node.bbox['front'].left,node.bbox['front'].right)
         return node
 
     def read_linedef(self, offset):

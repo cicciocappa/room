@@ -49,6 +49,42 @@ fn main() -> Result<(), Error> {
                 *control_flow = ControlFlow::Exit;
                 return;
             }
+            if input.key_pressed(VirtualKeyCode::Left) {
+                engine.key_state.left = true;
+            }
+            if input.key_released(VirtualKeyCode::Left) {
+                engine.key_state.left = false;
+            }
+            if input.key_pressed(VirtualKeyCode::Right) {
+                engine.key_state.right = true;
+            }
+            if input.key_released(VirtualKeyCode::Right) {
+                engine.key_state.right = false;
+            }
+            if input.key_pressed(VirtualKeyCode::W) {
+                engine.key_state.w = true;
+            }
+            if input.key_released(VirtualKeyCode::W) {
+                engine.key_state.w = false;
+            }
+            if input.key_pressed(VirtualKeyCode::S) {
+                engine.key_state.s = true;
+            }
+            if input.key_released(VirtualKeyCode::S) {
+                engine.key_state.s = false;
+            }
+            if input.key_pressed(VirtualKeyCode::A) {
+                engine.key_state.a = true;
+            }
+            if input.key_released(VirtualKeyCode::A) {
+                engine.key_state.a = false;
+            }
+            if input.key_pressed(VirtualKeyCode::D) {
+                engine.key_state.d = true;
+            }
+            if input.key_released(VirtualKeyCode::D) {
+                engine.key_state.d = false;
+            }
 
             // Resize the window
             if let Some(size) = input.window_resized() {
